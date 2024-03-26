@@ -1,0 +1,259 @@
+<html>
+    
+    <style>
+    html {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #4A4A4A;
+  }
+  
+  body {
+    min-height: 100vh;
+    background: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your preference */
+  }
+
+  header {
+    width: calc(100% - 2em); /* Adjusting the width to account for margin */
+    max-width: 600px; /* Assuming each main section is about 50% of 1200px */
+    margin: 1em auto;
+    padding: 0 1em; /* Match main element padding for alignment */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    color: #FFFFFF;
+  }
+
+  main {
+    flex: 1;
+    margin: 1em;
+    padding: 1.5em;
+    background-color: #FFFFFF;
+    
+    box-shadow:  1px  1px 5px #dedede,
+                -1px -1px 5px #dedede,
+                1px -1px 5px #dedede,
+                -1px  1px 5px #dedede;   border-radius: 10px;
+    }
+
+  main p {
+    font-size: 95%;
+  }
+
+  main div {
+    font-size: 125%;
+  }
+
+  @media (min-width: 768px) {
+    header {
+      text-align: left;
+      margin: 1em 1em 1em 0; /* Align the header with the left main element */
+      max-width: none; /* Remove max-width restriction on larger screens */
+      width: auto; /* Allow the header to fit its content */
+      padding-left: 1.5em; /* Match the main element's padding for exact alignment */
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: row; /* Side by side on desktop */
+    }
+    main {
+      width: calc(50% - 2em); /* Adjust width to account for margins */
+      margin: 1em; /* Ensure this matches the header margin */
+      padding: 1.5em; /* Matched in the header for alignment */
+    }
+  }
+
+  .month-indicator {
+    color: #000000; /* Keeping the theme consistent */
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .day-of-week,
+  .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+  .day-of-week {
+    margin-top: 1.25em;
+  }
+  
+  .day-of-week > * {
+    font-size: 0.85em; /* Slightly larger for readability */
+    color: #000000; /* Contrast color for headers */
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
+  }
+  
+  .date-grid {
+    margin-top: 0.5em;
+  }
+  
+  .date-grid button:first-child {
+    grid-column: 6;
+  }
+  
+  .date-grid button {
+    position: relative;
+    border: 0;
+    width: 4.5ch;
+    height: 4.5ch;
+    border-radius: 50%;
+    font-size: 15;
+    background-color: transparent;
+    color: #8b8585; 
+  }
+  
+  .date-grid button:hover,
+  .date-grid button:focus {
+    outline: none;
+    background-color: #272727; 
+    color: #FFFFFF; 
+    cursor: pointer;
+  }
+  
+  .date-grid button:active {
+    background-color: #000000; 
+    color: #FFFFFF;
+  }
+    </style>
+    <body>
+        <header>
+            <h1>Calendario</h1>
+          </header>
+          <div class="content-wrapper">
+        
+          <main>
+            <h2>Marzo 2024</h2>
+            <p>Il calendario qui a destra è stato realizzato usando il sistema Grid di CSS. Al contrario, l'allineamento dell'header e dei due main è stato realizzato usando le proprietà Flex.</p>
+            <ul>
+              <li>La pseudo-class <b>:hover</b> consente di modificare dello stile quando si passa il mouse sulle date.</li> 
+              <li>La pseudo-class <b>:focus</b> consente di modificare lo stile quando si clicca su un elemento come un input o un bottone.</li>
+              <li>La pseudo-class <b>:active</b> serve per dare feedback all'utente che un elemento ha ricevuto un evento come un click.</li>
+            </ul>
+          </main>
+          <main>
+            <div class="calendar">
+              <div class="month-indicator">
+                <time datetime="2024-03" style="font-weight: 700;"> March 2024 </time>
+              </div>
+              <div class="day-of-week">
+                <div>Su</div>
+                <div>Mo</div>
+                <div>Tu</div>
+                <div>We</div>
+                <div>Th</div>
+                <div>Fr</div>
+                <div>Sa</div>
+              </div>
+              <div class="date-grid">
+                <button>
+                  <time datetime="2024-03-01">1</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-02">2</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-03">3</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-04">4</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-05">5</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-06">6</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-07">7</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-08">8</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-09">9</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-10">10</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-11">11</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-12">12</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-13">13</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-14">14</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-15">15</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-16">16</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-17">17</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-18">18</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-19">19</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-20">20</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-21">21</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-22">22</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-23">23</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-24">24</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-25">25</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-26">26</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-27">27</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-28">28</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-29">29</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-30">30</time>
+                </button>
+                <button>
+                  <time datetime="2024-03-31">31</time>
+                </button>
+              </div>
+            </div>
+          </main>
+          </div>
+    </body>
+</html>
